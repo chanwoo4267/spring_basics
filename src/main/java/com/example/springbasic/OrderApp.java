@@ -10,8 +10,9 @@ import com.example.springbasic.order.OrderServiceImpl;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appconfig = new AppConfig();
+        MemberService memberService = appconfig.memberService();
+        OrderService orderService = appconfig.orderService();
 
         Long memberID = 1L;
         Member member = new Member(memberID, "memberA", Grade.VIP);
